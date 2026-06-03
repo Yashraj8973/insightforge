@@ -92,7 +92,7 @@ body {
 /* ================= HERO ================= */
 .hero {
   text-align: center;
-  padding: 150px 20px;
+  padding: 90px 20px;
   background: radial-gradient(circle at top, #1e3a8a, transparent 60%);
 }
 
@@ -111,7 +111,7 @@ body {
 
 /* ================= SECTIONS ================= */
 .section {
-  padding: 110px 20px;
+  padding: 60px 20px;
   text-align: center;
   background: radial-gradient(circle at top, #1e3a8a, transparent 60%);
 }
