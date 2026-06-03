@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sales Dashboard Demo</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+  margin: 0;
+  background: #0b1220;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= LOADER ================= */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #0b1220;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #1f2937;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ================= TOP BAR ================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(59,130,246,0.2);
+}
+
+.tabs button {
+  background: #111827;
+  border: 1px solid #2563eb;
+  color: #cbd5e1;
+  padding: 8px 12px;
+  margin-right: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.tabs button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.fullscreen-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= DASHBOARD SIZE ================= */
+.dashboard-wrapper {
+  max-width: 1200px;   /* increased width */
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* IFRAME */
+iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ================= FULLSCREEN FIX ================= */
+:fullscreen {
+  background: #0b1220;
+}
+
+:fullscreen iframe {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader" style="display:none;">
+  <div class="spinner"></div>
+  <p style="color:#94a3b8;margin-top:10px;">Loading Dashboard...</p>
+</div>
+
+<!-- HEADER -->
+<header class="navbar">
+  <div class="logo">
+    <span class="logo-icon">⚡</span>
+    <div>
+      <div class="logo-text">InsightForge</div>
+      <div style="font-size:12px;color:#94a3b8;">
+        Excel In → Insights Out
+      </div>
+    </div>
+  </div>
+
+
+<nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="About.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  </header>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tabs">
+    <button class="active" onclick="switchDashboard(event,'sales')">Sales</button>
+    <button onclick="switchDashboard(event,'finance')">Finance</button>
+    <button onclick="switchDashboard(event,'ops')">Operations</button>
+  </div>
+
+  <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashWrap" class="dashboard-wrapper">
+  <iframe id="dashboardFrame"></iframe>
+</div>
+
+<script>
+/* ================= DASHBOARD LINKS ================= */
+const dashboards = {
+  sales: "https://app.powerbi.com/reportEmbed?reportId=93657e3b-37a6-4b7f-9b79-533d59ecc878&autoAuth=true&ctid=e0793d39-0939-496d-b129-198edd916feb",
+  finance: "https://app.powerbi.com/reportEmbed?reportId=223d6fc9-6c3e-44e2-8569-3eed0d600d23&autoAuth=true&ctid=e0793d39-0939-496d-b129-198edd916feb",
+  ops: "https://app.powerbi.com/reportEmbed?reportId=9ad9d1c3-c34d-4795-9acb-a4b7bc988214&autoAuth=true&ctid=e0793d39-0939-496d-b129-198edd916feb"
+};
+
+/* ================= LOAD DASHBOARD ================= */
+function loadDashboard(type) {
+  document.getElementById("loader").style.display = "flex";
+
+  setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("dashboardFrame").src = dashboards[type];
+  }, 900);
+}
+
+/* ================= SWITCH DASHBOARD ================= */
+function switchDashboard(event, type) {
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+  loadDashboard(type);
+}
+
+/* ================= FULLSCREEN ================= */
+function toggleFullscreen() {
+  const elem = document.getElementById("dashWrap");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch(err => console.log(err));
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+/* ================= AUTO LOAD ================= */
+window.onload = () => {
+  loadDashboard("sales");
+};
+</script>
+<footer>
+© 2026 InsightForge
+</footer>
+</body>
+</html>
