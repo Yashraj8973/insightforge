@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
   <title>Services | SheetBI</title>
-  <meta name="description" content="Explore SheetBI services: Excel to Power BI conversion, dashboard design, and automated business intelligence solutions.">
+
+  <meta name="description"
+        content="Excel to Power BI migration, automation pipelines, and BI consulting services by SheetBI.">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
@@ -10,17 +15,18 @@
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
 
   <div class="logo">
-  <span class="logo-icon">⚡</span>
-  <div>
-    <div class="logo-text">SheetBI</div>
-    <div style="font-size:12px;color:#94a3b8;">
-      Excel In → Insights Out
+    <span class="logo-icon">⚡</span>
+    <div>
+      <div class="logo-text">SheetBI</div>
+      <div style="font-size:12px;color:#94a3b8;">
+        Excel In → Insights Out
+      </div>
     </div>
   </div>
-</div>
 
   <nav class="nav-links">
     <a href="index.html">Home</a>
@@ -31,62 +37,163 @@
 
 </header>
 
-<!-- HERO -->
+<!-- HERO (DIFFERENT STYLE THAN INDEX) -->
 <section class="section">
-  <h1>Stop Manual Excel Reporting. Start Real-Time Power BI Insights.</h1>
-<p>We help businesses automate reporting, eliminate spreadsheets, and build decision-ready dashboards in days, not weeks.</p>
+
+  <h1>We Build Automated Reporting Systems for Growing Teams</h1>
+
+  <p style="max-width:800px;margin:auto;color:#94a3b8;">
+    SheetBI is not just a dashboard service.
+    We design complete reporting systems that remove manual Excel work
+    and replace it with scalable Power BI automation.
+  </p>
+
 </section>
 
 
-<!-- SERVICES -->
-<section class="section dark">
+<!-- WHO THIS IS FOR (HORIZONTAL PREMIUM) -->
 
-  <div class="grid">
 
-    <div class="card">
-      <h2>📊 Excel → Power BI Conversion</h2>
-      <p>We transform messy Excel sheets into structured, interactive Power BI dashboards that update automatically.</p>
+  <section id="who-this-is-for" class="section dark">
+  <h2>Built for Excel Teams</h2>
+
+  <div style="
+    max-width:1000px;
+    margin:60px auto;
+    display:flex;
+    gap:20px;
+    justify-content:space-between;
+    flex-wrap:wrap;
+  ">
+
+    <!-- CARD 1 -->
+    <div class="grid">
+  <div class="card service-hover-card center-card">
+    <div style="font-size:34px;">🧑‍💼</div>
+    <h3 style="margin-top:10px;">Business Teams</h3>
+    <p style="color:#94a3b8;margin-top:8px;">
+      Spending hours every week updating Excel reports manually.
+    </p>
+  </div>
+
+  <div class="card service-hover-card center-card">
+    <div style="font-size:34px;">📊</div>
+    <h3 style="margin-top:10px;">Operations Leaders</h3>
+    <p style="color:#94a3b8;margin-top:8px;">
+      Need real-time visibility into KPIs and performance.
+    </p>
+  </div>
+
+  <div class="card service-hover-card center-card">
+    <div style="font-size:34px;">💰</div>
+    <h3 style="margin-top:10px;">Finance Teams</h3>
+    <p style="color:#94a3b8;margin-top:8px;">
+      Struggling with complex, error-prone reporting cycles.
+    </p>
+  </div>
+</div>
+
+</section>
+
+<!-- PROBLEM → IMPACT -->
+<!--<section class="section">
+
+  <h2>What Changes After Automation</h2>
+
+  <div style="max-width:900px;margin:50px auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;text-align:left;">
+
+    <div>
+      <h3 style="color:#94a3b8; text-align: center;">Before</h3>
+
+      <p style="margin-top:15px; text-align: center;">Manual Excel updates every week</p>
+      <p style="text-align: center">Multiple file versions across teams</p>
+      <p style="text-align: center">Delayed reporting cycles</p>
+      <p style="text-align: center">High chance of human error</p>
+
     </div>
 
-    <div class="card">
-      <h2>⚙️ Data Automation Pipelines</h2>
-      <p>Eliminate manual reporting. We automate your data flow from Excel to dashboards with zero effort from your team.</p>
+    <div>
+      <h3 style="color:#3b82f6; text-align: center;">After</h3>
+
+      <p style="margin-top:15px; text-align: center;">Automated Power BI dashboards</p>
+      <p style="text-align: center">Single source of truth</p>
+      <p style="text-align: center">Real-time data refresh</p>
+      <p style="text-align: center">Accurate decision making</p>
+
     </div>
 
-    <div class="card">
-      <h2>🎯 KPI Dashboard Design</h2>
-      <p>Beautiful, executive-ready dashboards designed to track your most important business metrics in real time.</p>
+  </div>
+
+</section>-->
+
+<!-- SERVICES (MORE DETAILED, NOT CARD REPETITION) -->
+<section class="section dark" style="padding-top:40px;">
+
+  <h2>What We Actually Do</h2>
+
+  <div style="max-width:900px;margin: 30px auto;display:flex;flex-direction:column;gap:18px;text-align:left;">
+
+    <div class="card service-hover-card" style="display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-size:20px;">📊</div>
+      <div>
+        <h3>Excel → Power BI Migration</h3>
+        <p>We convert messy Excel reports into structured Power BI systems.</p>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>🧠 Business Intelligence Consulting</h2>
-      <p>We help you decide what to track, how to structure data, and how to turn reports into real business strategy.</p>
+    <div class="card service-hover-card" style="display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-size:20px;">⚙️</div>
+      <div>
+        <h3>Automation Pipelines</h3>
+        <p>Remove manual reporting with fully automated data workflows.</p>
+      </div>
+    </div>
+
+    <div class="card service-hover-card" style="display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-size:20px;">📈</div>
+      <div>
+        <h3>Dashboard Engineering</h3>
+        <p>We design executive dashboards for decision-making.</p>
+      </div>
+    </div>
+
+    <div class="card service-hover-card" style="display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-size:20px;">🧠</div>
+      <div>
+        <h3>BI Strategy</h3>
+        <p>We define KPIs and scalable reporting architecture.</p>
+      </div>
     </div>
 
   </div>
 
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- ENGAGEMENT MODEL (NEW - VERY IMPORTANT) -->
 <section class="section">
 
-  <h2>How It Works</h2>
+  <h2>How We Work</h2>
 
   <div class="grid">
 
     <div class="card">
-      <h3>1. Share Your Excel Data</h3>
-      <p>Upload your spreadsheets or connect your data sources.</p>
+      <h3>1. Understand</h3>
+      <p>We analyze your current Excel reporting system.</p>
     </div>
 
     <div class="card">
-      <h3>2. We Build Your Pipeline</h3>
-      <p>We clean, structure, and automate your data flow into Power BI.</p>
+      <h3>2. Design</h3>
+      <p>We design the data model and dashboard structure.</p>
     </div>
 
     <div class="card">
-      <h3>3. Get Live Dashboards</h3>
-      <p>Receive interactive dashboards that update automatically in real time.</p>
+      <h3>3. Build</h3>
+      <p>We develop Power BI dashboards and automation pipelines.</p>
+    </div>
+
+    <div class="card">
+      <h3>4. Deliver</h3>
+      <p>We deploy a fully automated reporting system.</p>
     </div>
 
   </div>
@@ -95,18 +202,24 @@
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Ready to Upgrade Your Reporting System?</h2>
-  <p>Stop manual Excel work. Start automated intelligence.</p>
-  <a href="contact.html" class="btn primary">Get Started</a>
+
+  <h2>Need a Reporting System Built for Your Business?</h2>
+
+  <p>Let’s design a scalable Power BI setup for your team.</p>
+
+  <a href="contact.html" class="btn primary">
+    Get Free Consultation
+  </a>
+
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
 
-    <div class="footer-left">
-        <p>© 2026 SheetBI - All Rights Reserved</p>
-        <p>Pune, Maharashtra, India</p>
-    </div>
-
+  <p>© 2026 SheetBI. All Rights Reserved.</p>
+  <p>Power BI Automation & Reporting Systems</p>
+  <p>Pune, Maharashtra, India</p>
+  <p>contact@sheetbi.com</p>
 
 </footer>
 
